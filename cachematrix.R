@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Matrix inverse computation is a costly operation, these functions/objects will
+## allow us to compute matrix inverse as well as store them in cache, so that 
+## the next time we need a matrix inverse we can simply get it from cache
+## instead of recomputation
 
-## Write a short comment describing this function
+## input an invertible matrix and return
+## a complex object which contains functions for storing
+## its value and inverse 
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
@@ -19,7 +23,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+## If the inverse has already been calculated (and the matrix has not changed), 
+## then cacheSolve would retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
     inv <- x$getInverse()
